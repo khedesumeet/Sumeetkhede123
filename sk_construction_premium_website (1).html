@@ -1,0 +1,362 @@
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI',sans-serif;color:#1a0a2e;background:#fff;}
+.P{color:#7a2d96;} .PB{background:#7a2d96;} .PD{color:#4a1060;}
+
+nav{background:#1e0a2e;padding:0 32px;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.logo-box{display:flex;align-items:center;gap:10px;}
+.logo-circle{width:44px;height:44px;background:#7a2d96;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:17px;font-weight:800;color:#fff;letter-spacing:1px;}
+.logo-text .name{font-size:17px;font-weight:800;color:#fff;letter-spacing:.5px;}
+.logo-text .tag{font-size:10px;color:#c9a0d8;letter-spacing:2px;text-transform:uppercase;}
+.nav-links{display:flex;gap:24px;list-style:none;}
+.nav-links a{color:#ddc8ee;text-decoration:none;font-size:13px;font-weight:500;}
+.nav-links a:hover{color:#d08fe0;}
+.wa-btn{display:flex;align-items:center;gap:7px;background:#25D366;color:#fff;border:none;padding:9px 18px;border-radius:24px;font-size:13px;font-weight:700;cursor:pointer;text-decoration:none;}
+.wa-btn i{font-size:17px;}
+
+.hero{background:#1e0a2e;padding:60px 40px 50px;position:relative;overflow:hidden;}
+.hero-bricks{position:absolute;inset:0;opacity:.07;background:repeating-linear-gradient(0deg,transparent,transparent 30px,#fff 30px,#fff 32px),repeating-linear-gradient(90deg,transparent,transparent 46px,#fff 46px,#fff 48px);}
+.hero-inner{position:relative;z-index:2;max-width:640px;}
+.hero-badge{display:inline-block;background:rgba(122,45,150,.4);border:1px solid #9b5caa;color:#e8d0f5;font-size:11px;font-weight:700;letter-spacing:2px;padding:5px 14px;border-radius:20px;text-transform:uppercase;margin-bottom:18px;}
+.hero h1{font-size:40px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:14px;}
+.hero h1 span{color:#d08fe0;}
+.hero .tagline{font-size:16px;color:#c9a0d8;font-style:italic;margin-bottom:12px;}
+.hero .sub{font-size:15px;color:#b090c0;line-height:1.7;margin-bottom:28px;}
+.owner-strip{display:flex;align-items:center;gap:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:14px 20px;margin-bottom:28px;max-width:480px;}
+.owner-av{width:46px;height:46px;background:#7a2d96;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;color:#fff;flex-shrink:0;}
+.owner-av-txt .n{font-size:15px;font-weight:700;color:#fff;}
+.owner-av-txt .r{font-size:12px;color:#c9a0d8;}
+.owner-av-txt .ph{font-size:13px;color:#d08fe0;font-weight:600;margin-top:2px;}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;}
+.btn-pr{background:#7a2d96;color:#fff;padding:12px 26px;border-radius:8px;font-size:14px;font-weight:700;border:none;cursor:pointer;text-decoration:none;}
+.btn-pr:hover{background:#9a3db6;}
+.btn-ol{background:transparent;color:#e0d0ee;padding:12px 26px;border-radius:8px;font-size:14px;font-weight:700;border:1.5px solid #7a2d96;cursor:pointer;text-decoration:none;}
+.btn-ol:hover{background:rgba(122,45,150,.2);}
+
+.stats{background:#2c1040;display:grid;grid-template-columns:repeat(4,1fr);}
+.stat{padding:20px 12px;text-align:center;border-right:1px solid rgba(255,255,255,.08);}
+.stat:last-child{border-right:none;}
+.stat .n{font-size:24px;font-weight:900;color:#d08fe0;}
+.stat .l{font-size:11px;color:#a080b0;margin-top:3px;text-transform:uppercase;letter-spacing:1px;}
+
+section{padding:56px 40px;}
+.sec-tag{font-size:11px;font-weight:800;color:#7a2d96;text-transform:uppercase;letter-spacing:2.5px;margin-bottom:7px;}
+.sec-h{font-size:28px;font-weight:900;color:#1e0a2e;margin-bottom:10px;}
+.sec-s{font-size:15px;color:#666;line-height:1.6;max-width:540px;}
+
+.services{background:#f9f3fd;}
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:32px;}
+.svc-card{background:#fff;border-radius:12px;padding:22px 18px;border:1px solid #e8d0f5;transition:box-shadow .2s,transform .2s;cursor:default;}
+.svc-card:hover{box-shadow:0 6px 24px rgba(122,45,150,.13);transform:translateY(-2px);}
+.svc-icon{width:46px;height:46px;background:#f0e0f8;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:22px;color:#7a2d96;margin-bottom:12px;}
+.svc-card h3{font-size:14px;font-weight:800;color:#1e0a2e;margin-bottom:6px;}
+.svc-card p{font-size:12px;color:#888;line-height:1.5;}
+
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;margin-top:28px;}
+.why-visual{background:#2c1040;border-radius:14px;padding:36px 28px;position:relative;overflow:hidden;}
+.why-bricks{position:absolute;inset:0;opacity:.1;background:repeating-linear-gradient(0deg,transparent,transparent 28px,#fff 28px,#fff 30px),repeating-linear-gradient(90deg,transparent,transparent 42px,#fff 42px,#fff 44px);}
+.why-visual-inner{position:relative;z-index:2;}
+.why-visual h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:18px;}
+.why-item{display:flex;align-items:center;gap:10px;margin-bottom:13px;}
+.why-tick{width:26px;height:26px;background:rgba(122,45,150,.5);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#d08fe0;font-size:14px;flex-shrink:0;}
+.why-item span{font-size:14px;color:#ddc0f0;font-weight:500;}
+.why-list-r{list-style:none;}
+.why-list-r li{display:flex;gap:13px;align-items:flex-start;margin-bottom:18px;}
+.why-ic{width:36px;height:36px;background:#f0e0f8;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#7a2d96;font-size:18px;flex-shrink:0;margin-top:2px;}
+.why-list-r li h4{font-size:14px;font-weight:800;color:#1e0a2e;margin-bottom:3px;}
+.why-list-r li p{font-size:13px;color:#888;line-height:1.5;}
+
+.calc-sec{background:#f9f3fd;}
+.calc-box{background:#fff;border:1px solid #e8d0f5;border-radius:14px;padding:32px;margin-top:32px;max-width:600px;}
+.calc-box h3{font-size:17px;font-weight:800;color:#1e0a2e;margin-bottom:20px;}
+.calc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px;}
+.calc-field label{font-size:12px;color:#888;font-weight:700;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:5px;}
+.calc-field input,.calc-field select{width:100%;padding:10px 13px;border:1px solid #e0d0f0;border-radius:8px;font-size:14px;color:#1e0a2e;outline:none;font-family:inherit;}
+.calc-field input:focus,.calc-field select:focus{border-color:#7a2d96;}
+.calc-result{background:#1e0a2e;border-radius:10px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;margin-top:6px;}
+.calc-result .label{font-size:13px;color:#c9a0d8;}
+.calc-result .amount{font-size:24px;font-weight:900;color:#d08fe0;}
+.calc-btn{width:100%;background:#7a2d96;color:#fff;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;margin-top:14px;}
+.calc-btn:hover{background:#9a3db6;}
+.calc-note{font-size:12px;color:#aaa;margin-top:8px;text-align:center;}
+
+.about{background:#1e0a2e;}
+.about .sec-h{color:#fff;}
+.about .sec-s{color:#c9a0d8;}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:28px;}
+.about-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;}
+.about-card h4{font-size:14px;font-weight:800;color:#d08fe0;margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;}
+.about-card p{font-size:14px;color:#c0a0d0;line-height:1.7;}
+
+.contact-sec{background:#f9f3fd;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:32px;}
+.contact-info-box{background:#1e0a2e;border-radius:14px;padding:30px;position:relative;overflow:hidden;}
+.contact-info-box .bricks{position:absolute;inset:0;opacity:.07;background:repeating-linear-gradient(0deg,transparent,transparent 30px,#fff 30px,#fff 32px),repeating-linear-gradient(90deg,transparent,transparent 46px,#fff 46px,#fff 48px);}
+.contact-info-box .inner{position:relative;z-index:2;}
+.contact-info-box h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:20px;}
+.ci-item{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+.ci-item i{font-size:20px;color:#d08fe0;}
+.ci-item span{font-size:14px;color:#c9a0d8;}
+.ci-item a{color:#d08fe0;text-decoration:none;font-weight:700;}
+.cta-wa{display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:800;cursor:pointer;width:100%;margin-top:20px;text-decoration:none;}
+.cta-wa i{font-size:20px;}
+.contact-form-box{background:#fff;border:1px solid #e8d0f5;border-radius:14px;padding:30px;}
+.contact-form-box h3{font-size:17px;font-weight:800;color:#1e0a2e;margin-bottom:20px;}
+.cf input,.cf select,.cf textarea{width:100%;padding:11px 14px;border:1px solid #e0d0f0;border-radius:8px;font-size:14px;color:#1e0a2e;outline:none;margin-bottom:12px;font-family:inherit;}
+.cf input:focus,.cf select:focus,.cf textarea:focus{border-color:#7a2d96;}
+.cf textarea{resize:none;height:90px;}
+.cf-btn{width:100%;background:#7a2d96;color:#fff;border:none;padding:13px;border-radius:8px;font-size:15px;font-weight:800;cursor:pointer;}
+.cf-btn:hover{background:#9a3db6;}
+
+footer{background:#0d0416;color:#888;text-align:center;padding:20px 40px;font-size:13px;}
+footer strong{color:#d08fe0;}
+
+.quot-bar{background:#7a2d96;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;}
+.quot-bar p{color:#f0e0ff;font-size:14px;font-weight:500;}
+.quot-bar button{background:#fff;color:#7a2d96;border:none;padding:10px 22px;border-radius:8px;font-size:13px;font-weight:800;cursor:pointer;}
+</style>
+
+<h2 class="sr-only" style="position:absolute;left:-9999px">SK Construction — Plum Wall Specialist Contractor website</h2>
+
+<nav>
+  <div class="logo-box">
+    <div class="logo-circle">SK</div>
+    <div class="logo-text">
+      <div class="name">SK Construction</div>
+      <div class="tag">Plum Wall Specialist</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Calculator</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/919975304937" class="wa-btn"><i class="ti ti-brand-whatsapp"></i> WhatsApp Us</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bricks"></div>
+  <div class="hero-inner">
+    <div class="hero-badge">Maharashtra's Trusted Plum Wall Expert</div>
+    <h1>Strong Foundations,<br><span>Reliable Construction.</span></h1>
+    <div class="tagline">"Built to last. Engineered to protect."</div>
+    <div class="sub">Specialized plum wall construction, flood protection walls, retaining walls & RCC works for residential, industrial & infrastructure projects across Maharashtra.</div>
+    <div class="owner-strip">
+      <div class="owner-av">SK</div>
+      <div class="owner-av-txt">
+        <div class="n">Sumeet Khede</div>
+        <div class="r">Owner & Engineer, SK Construction</div>
+        <div class="ph"><i class="ti ti-phone" style="font-size:13px;vertical-align:-1px"></i> 9975304937</div>
+      </div>
+    </div>
+    <div class="hero-btns">
+      <a href="#" class="btn-pr">Our Services</a>
+      <a href="https://wa.me/919975304937" class="btn-ol">Get Free Quote</a>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="n">500+</div><div class="l">Projects Done</div></div>
+  <div class="stat"><div class="n">15+</div><div class="l">Years Experience</div></div>
+  <div class="stat"><div class="n">MH</div><div class="l">Work Across Maharashtra</div></div>
+  <div class="stat"><div class="n">100%</div><div class="l">Quality Guarantee</div></div>
+</div>
+
+<section class="services">
+  <div class="sec-tag">What We Build</div>
+  <div class="sec-h">Our Services</div>
+  <div class="sec-s">From plum walls to full civil works — every job done with skilled labour and quality materials.</div>
+  <div class="svc-grid">
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-wall"></i></div>
+      <h3>Plum Wall Construction</h3>
+      <p>Our core specialty — durable stone plum walls built to exact specifications for lasting strength.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-droplet-off"></i></div>
+      <h3>Flood Protection Walls</h3>
+      <p>Engineered flood barriers and protective structures for industrial, agricultural & residential zones.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-barrier-block"></i></div>
+      <h3>Retaining Walls</h3>
+      <p>Structurally sound retaining walls for slope stabilization, land retention, and site protection.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-stack-2"></i></div>
+      <h3>Stone Masonry Work</h3>
+      <p>Expert stone masonry — rubble, coursed, and decorative stonework for all construction types.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-building-arch"></i></div>
+      <h3>RCC Works</h3>
+      <p>Reinforced concrete construction — columns, beams, slabs, and structural RCC elements.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-layout-board"></i></div>
+      <h3>Shuttering & Concreting</h3>
+      <p>Professional formwork, shuttering setup, and precision concreting for all project scales.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-users"></i></div>
+      <h3>Labour Contract Work</h3>
+      <p>Skilled labour teams on contract for civil construction, site works, and project execution.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-icon"><i class="ti ti-clipboard-check"></i></div>
+      <h3>Site Execution & Supervision</h3>
+      <p>End-to-end project supervision ensuring quality, safety, and timely delivery on site.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="why-grid">
+    <div class="why-visual">
+      <div class="why-bricks"></div>
+      <div class="why-visual-inner">
+        <h3>Why SK Construction?</h3>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Experienced Plum Wall Contractor</span></div>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Quality Workmanship, Every Time</span></div>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Timely Completion — No Delays</span></div>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Skilled & Trained Labour Team</span></div>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Competitive & Transparent Rates</span></div>
+        <div class="why-item"><div class="why-tick"><i class="ti ti-check"></i></div><span>Work Across All Maharashtra</span></div>
+        <div style="margin-top:24px;padding-top:20px;border-top:1px solid rgba(255,255,255,.12);">
+          <a href="https://wa.me/919975304937" style="display:flex;align-items:center;justify-content:center;gap:8px;background:#25D366;color:#fff;border:none;padding:12px;border-radius:8px;font-size:14px;font-weight:800;cursor:pointer;text-decoration:none;"><i class="ti ti-brand-whatsapp" style="font-size:18px"></i>Chat with Sumeet on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+    <ul class="why-list-r">
+      <li><div class="why-ic"><i class="ti ti-award"></i></div><div><h4>Specialist Expertise</h4><p>Dedicated plum wall and civil construction contractor with deep domain experience and proven project delivery.</p></div></li>
+      <li><div class="why-ic"><i class="ti ti-shield-check"></i></div><div><h4>Durable Structures</h4><p>Every wall and structure built with selected stones, proper mortar mix, and construction best practices for long life.</p></div></li>
+      <li><div class="why-ic"><i class="ti ti-map-pin"></i></div><div><h4>Pan-Maharashtra Coverage</h4><p>We take up projects across Maharashtra — residential, industrial, and government infrastructure works.</p></div></li>
+      <li><div class="why-ic"><i class="ti ti-currency-rupee"></i></div><div><h4>Affordable & Transparent</h4><p>Clear quotations, no hidden costs, and competitive pricing tailored to your project scale and requirements.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section class="calc-sec">
+  <div class="sec-tag">Cost Estimator</div>
+  <div class="sec-h">Plum Wall Rate Calculator</div>
+  <div class="sec-s">Get an instant rough estimate for your plum wall project. Contact us for a detailed quote.</div>
+  <div class="calc-box">
+    <h3><i class="ti ti-calculator" style="color:#7a2d96;vertical-align:-2px;margin-right:6px"></i>Wall Cost Estimator</h3>
+    <div class="calc-row">
+      <div class="calc-field"><label>Wall Length (metres)</label><input type="number" id="len" min="1" value="10" step="1"></div>
+      <div class="calc-field"><label>Wall Height (metres)</label><input type="number" id="ht" min="0.5" value="2" step="0.5"></div>
+    </div>
+    <div class="calc-row">
+      <div class="calc-field"><label>Wall Thickness</label>
+        <select id="thick">
+          <option value="0.45">450mm (Standard)</option>
+          <option value="0.6">600mm (Medium)</option>
+          <option value="0.9">900mm (Heavy)</option>
+        </select>
+      </div>
+      <div class="calc-field"><label>Wall Type</label>
+        <select id="wtype">
+          <option value="1">Plum Wall (Rubble)</option>
+          <option value="1.2">Retaining Wall</option>
+          <option value="1.4">Flood Protection Wall</option>
+        </select>
+      </div>
+    </div>
+    <div class="calc-result">
+      <div><div class="label">Estimated Cost (approx.)</div><div class="amount" id="est">₹0</div></div>
+      <div style="text-align:right"><div class="label">Volume</div><div style="font-size:16px;font-weight:800;color:#c9a0d8" id="vol">0 m³</div></div>
+    </div>
+    <button class="calc-btn" onclick="sendPrompt('I used the SK Construction calculator. Length: '+document.getElementById(\'len\').value+'m, Height: '+document.getElementById(\'ht\').value+'m. Please help me get a proper quotation.')">Get Detailed Quotation ↗</button>
+    <div class="calc-note">* Estimate only. Actual cost depends on site conditions, stone availability & access. Contact Sumeet for exact rates.</div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="sec-tag" style="color:#d08fe0">About Us</div>
+  <div class="sec-h">SK Construction — Engineer & Contractor</div>
+  <div class="sec-s">Specialized civil construction contractor delivering durable, quality-built structures across Maharashtra.</div>
+  <div class="about-grid">
+    <div class="about-card">
+      <h4><i class="ti ti-info-circle" style="vertical-align:-2px;margin-right:6px"></i>Who We Are</h4>
+      <p>SK Construction is a specialized plum wall and civil construction contractor providing durable retaining walls, flood protection structures, and RCC construction solutions for residential, industrial, and infrastructure projects.<br><br>Led by owner <strong style="color:#d08fe0">Sumeet Khede</strong>, we bring expertise, skilled workforce, and commitment to quality on every site.</p>
+    </div>
+    <div class="about-card">
+      <h4><i class="ti ti-target" style="vertical-align:-2px;margin-right:6px"></i>Our Mission</h4>
+      <p>To deliver strong, reliable, and cost-effective civil construction works — specializing in plum walls and flood protection — while maintaining the highest standards of workmanship and timely project completion.<br><br>We work with integrity, transparency, and passion for building structures that stand the test of time.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact-sec">
+  <div class="sec-tag">Get In Touch</div>
+  <div class="sec-h">Contact SK Construction</div>
+  <div class="sec-s">Ready to start your project? Call, WhatsApp, or fill the form below — we respond fast!</div>
+  <div class="contact-grid">
+    <div class="contact-info-box">
+      <div class="bricks"></div>
+      <div class="inner">
+        <h3>SK Construction</h3>
+        <div class="ci-item"><i class="ti ti-user"></i><span>Sumeet Khede — Owner & Engineer</span></div>
+        <div class="ci-item"><i class="ti ti-phone"></i><span><a href="tel:9975304937">9975304937</a></span></div>
+        <div class="ci-item"><i class="ti ti-map-pin"></i><span>Maharashtra, India (Pan-Maharashtra Projects)</span></div>
+        <div class="ci-item"><i class="ti ti-briefcase"></i><span>Civil Contractor — Plum Wall Specialist</span></div>
+        <div class="ci-item"><i class="ti ti-clock"></i><span>Mon–Sat: 8:00 AM – 8:00 PM</span></div>
+        <a href="https://wa.me/919975304937?text=Hello%20Sumeet%20bhai%2C%20I%20need%20a%20quotation%20for%20plum%20wall%20construction." class="cta-wa"><i class="ti ti-brand-whatsapp"></i>WhatsApp for Instant Quote</a>
+      </div>
+    </div>
+    <div class="contact-form-box">
+      <h3>Send Enquiry</h3>
+      <div class="cf">
+        <input type="text" placeholder="Your Full Name">
+        <input type="tel" placeholder="Mobile Number">
+        <select>
+          <option disabled selected>Select Service Required</option>
+          <option>Plum Wall Construction</option>
+          <option>Flood Protection Wall</option>
+          <option>Retaining Wall</option>
+          <option>Stone Masonry Work</option>
+          <option>RCC Works</option>
+          <option>Shuttering & Concreting</option>
+          <option>Labour Contract Work</option>
+          <option>Site Supervision</option>
+        </select>
+        <input type="text" placeholder="Project Location (Village/City)">
+        <textarea placeholder="Describe your project (wall length, height, type of work...)"></textarea>
+        <button class="cf-btn" onclick="sendPrompt('I submitted an enquiry on SK Construction website. Please help me draft a detailed project requirement.')">Submit Enquiry →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quot-bar">
+  <p><i class="ti ti-file-text" style="vertical-align:-2px;margin-right:6px"></i> Need a written quotation for your project? Contact Sumeet directly!</p>
+  <button onclick="sendPrompt('Help me prepare a project enquiry / quotation request for SK Construction plum wall work.')">Request Quotation ↗</button>
+</div>
+
+<footer>
+  <strong>SK Construction</strong> — Plum Wall Specialist Contractor | Owner: Sumeet Khede | <strong>9975304937</strong><br>
+  <span style="font-size:12px;margin-top:6px;display:block">Plum Walls · Retaining Walls · Flood Protection · RCC Works · Stone Masonry | Maharashtra</span>
+  <span style="font-size:11px;color:#555;margin-top:4px;display:block">"Strong Foundations, Reliable Construction." © 2025 SK Construction</span>
+</footer>
+
+<script>
+function calc(){
+  var l=parseFloat(document.getElementById('len').value)||0;
+  var h=parseFloat(document.getElementById('ht').value)||0;
+  var t=parseFloat(document.getElementById('thick').value)||0.45;
+  var m=parseFloat(document.getElementById('wtype').value)||1;
+  var vol=l*h*t;
+  var rate=3200;
+  var cost=Math.round(vol*rate*m);
+  document.getElementById('vol').textContent=vol.toFixed(2)+' m³';
+  document.getElementById('est').textContent='₹'+cost.toLocaleString('en-IN');
+}
+['len','ht','thick','wtype'].forEach(function(id){
+  document.getElementById(id).addEventListener('input',calc);
+});
+calc();
+</script>
